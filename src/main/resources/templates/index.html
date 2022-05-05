@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hệ thống điện Hà Nội</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/style.css">
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img alt="EVNHANOI" src="/img/logo-small.svg">
+                    </div>
+                    <div class="col-9">
+                        <nav class="nav justify-content-end">
+                            <a class="nav-link active" th:href="@{/index}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                     height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                <path fill-rule="evenodd"
+                                      d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                </svg>
+                            </a>
+                            <a class="nav-link" th:href="@{/users}">Quản lý người dùng</a>
+                            <a class="nav-link" th:href="@{/register}">Đăng ký</a>
+                            <a class="nav-link" th:href="@{/login}">Đăng nhập</a>
+                            <a class="nav-link" th:href="@{/calculator}">Tính tiền điện</a>
+                            <a class="nav-link" th:href="@{/customer}">Đăng ký điện</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-class">
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="/img/slide_1.png" class="caroul-img"alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>EVNHANOI</h3>
+                                <p>Chuyên nghiệp, văn minh, hiệu quả</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_2.png" class="caroul-img"alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Xây Dựng Thủ Đô</h3>
+                                <p>Giàu mạnh, văn minh, hiện đại</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_3.png" class="caroul-img"alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>EVNHANOI</h3>
+                                <p>Phát triển nguồn năng lượng xanh</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_4.png" class="caroul-img"alt="Fourth slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Xây Dựng Thủ Đô</h3>
+                                <p>Thắp sáng niềm tin</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Trước</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Tiếp</span>
+                    </button>
+                </div>
+            </div>
+            <div class="event-class container">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                                role="tab" aria-controls="home" aria-selected="true">Tin Tức/Sự Kiện</button>                       
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row tab-body">
+
+                            <div class="col-7 tab-left">
+                                <div style="border-bottom: 1px solid rgb(247, 245, 245);">
+                                    <img class="img-tab"
+                                         src="https://apicskh.evnhanoi.com.vn/media/images/tin-hoat-dong/evnhanoi-dam-bao-dien-phuc-vu-dai-hoi-the-thao-dong-nam-a-lan-thu-31/RBWIQKPXLR.jpg"
+                                         alt="" style="float: left;">
+                                    <div>
+                                        <h4 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ
+                                            Đại hội Thể thao Đông Nam Á lần thứ 31</h4>
+                                        <p>15/04/2022 10:15:15</p>
+                                        <p>Tổng công ty Điện lực TP Hà Nội (EVNHANOI) đã lên phương
+                                            án với mục tiêu đảm bảo cấp điện an toàn, liên tục, ổn định...</p>
+                                    </div>
+                                </div>
+
+                                <div style="border-bottom: 1px solid rgb(240, 234, 234);">
+                                    <img class="img-tab"
+                                         src="https://apicskh.evnhanoi.com.vn/media/images/tin-hoat-dong/evnhanoi-dam-bao-dien-phuc-vu-dai-hoi-the-thao-dong-nam-a-lan-thu-31/RBWIQKPXLR.jpg"
+                                         alt="" style="float: left;">
+                                    <div>
+                                        <h4 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ
+                                            Đại hội Thể thao Đông Nam Á lần thứ 31</h4>
+                                        <p>15/04/2022 10:15:15</p>
+                                        <p>Tổng công ty Điện lực TP Hà Nội (EVNHANOI) đã lên phương
+                                            án với mục tiêu đảm bảo cấp điện an toàn, liên tục, ổn định...</p>
+                                    </div>
+                                </div>
+                                <div style="border-bottom: 1px solid rgb(250, 248, 248);">
+                                    <img class="img-tab"
+                                         src="https://apicskh.evnhanoi.com.vn/media/images/tin-hoat-dong/evnhanoi-dam-bao-dien-phuc-vu-dai-hoi-the-thao-dong-nam-a-lan-thu-31/RBWIQKPXLR.jpg"
+                                         alt="" style="float: left;">
+                                    <div>
+                                        <h4 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ
+                                            Đại hội Thể thao Đông Nam Á lần thứ 31</h4>
+                                        <p>15/04/2022 10:15:15</p>
+                                        <p>Tổng công ty Điện lực TP Hà Nội (EVNHANOI) đã lên phương
+                                            án với mục tiêu đảm bảo cấp điện an toàn, liên tục, ổn định...</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-5">
+                                <div class="right-tab">
+                                    <p class="text-tab-right-title">Tin tức về EVNHANOI</p>
+                                    <h5 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ Đại
+                                        hội Thể thao Đông Nam Á lần thứ 31</h5>
+                                    <p>15/04/2022 10:15:15</p>
+                                </div>
+                                <div class="right-tab">
+                                    <p class="text-tab-right-title">Tin tức về EVNHANOI</p>
+                                    <h5 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ Đại
+                                        hội Thể thao Đông Nam Á lần thứ 31</h5>
+                                    <p>15/04/2022 10:15:15</p>
+                                </div>
+                                <div class="right-tab">
+                                    <p class="text-tab-right-title">Tin tức về EVNHANOI</p>
+                                    <h5 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ Đại
+                                        hội Thể thao Đông Nam Á lần thứ 31</h5>
+                                    <p>15/04/2022 10:15:15</p>
+                                </div>
+                                <div class="right-tab">
+                                    <p class="text-tab-right-title">Tin tức về EVNHANOI</p>
+                                    <h5 class="text-title-tab">EVNHANOI đảm bảo điện phục vụ Đại
+                                        hội Thể thao Đông Nam Á lần thứ 31</h5>
+                                    <p>15/04/2022 10:15:15</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container footer">
+            <p>2022</p>
+            <p>Nhóm 7 Đề tài 1</p>
+        </div>
+    </body>
+</html>

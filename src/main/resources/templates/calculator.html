@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tính tiền điện</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/style.css">
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="row">
+                    <div class="col-3">
+                        <img alt="EVNHANOI" src="/img/logo-small.svg">
+                    </div>
+                    <div class="col-9">
+                        <nav class="nav justify-content-end">
+                            <a class="nav-link active" th:href="@{/index}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                     height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                <path fill-rule="evenodd"
+                                      d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                </svg>
+                            </a>
+                            <a class="nav-link" th:href="@{/users}">Quản lý người dùng</a>
+                            <a class="nav-link" th:href="@{/register}">Đăng ký</a>
+                            <a class="nav-link" th:href="@{/login}">Đăng nhập</a>
+                            <a class="nav-link" th:href="@{/calculator}">Tính tiền điện</a>
+                            <a class="nav-link" th:href="@{/customer}">Đăng ký điện</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-class">
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="/img/slide_1.png" class="caroul-img"alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>EVNHANOI</h3>
+                                <p>Chuyên nghiệp, văn minh, hiệu quả</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_2.png" class="caroul-img"alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Xây Dựng Thủ Đô</h3>
+                                <p>Giàu mạnh, văn minh, hiện đại</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_3.png" class="caroul-img"alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>EVNHANOI</h3>
+                                <p>Phát triển nguồn năng lượng xanh</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/img/slide_4.png" class="caroul-img"alt="Fourth slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Xây Dựng Thủ Đô</h3>
+                                <p>Thắp sáng niềm tin</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Trước</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Tiếp</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container ">
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-item" href="/">Trang Chủ</a>
+                    <a class="breadcrumb-item" href="/caculator">Tính tiền điện</a>
+                    <span class="breadcrumb-item active">Công cụ tính tiền điện</span>
+                </nav>
+
+                <div style="margin: 20px;">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Công cụ tính hóa đơn tiền điện</button>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
+                        </li> -->
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> 
+                            <div  class="container ">
+                                <div class=" justify-content-center">
+
+                                    <div style=" border: 1px solid black; margin-left: 15%; margin-right: 15%;">
+
+                                        <div id="cal">
+                                            <div class="star">
+                                                Nhập các thông số:
+                                            </div>
+                                            <div>
+                                                <table class="table table-ca">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Từ ngày - đến ngày</td>
+                                                            <td><input id="date1" type="date"></td>
+                                                            <td><input id="date2" type="date"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Tổng điện năng tiêu thụ (kWh)</td>
+                                                            <td><input type="number" id="numElec" style="border: none; border-bottom: 1px solid black;"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Số hộ dùng điện (hộ)</td>
+                                                            <td><input type="number" id="numH" style="border: none; border-bottom: 1px solid black;"></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"></td>
+                                                            <td><button type="button" class="btn " id="btn-calc" onclick="onClickCalc()" style="background-color: blue; color: aliceblue; "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                                    </svg>   Tính toán</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <div class="star">
+                                                Kết quả:
+                                            </div>
+                                            <div>
+                                                <table class="table table-ca">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>
+                                                                <p>ĐƠN GIÁ THEO QĐ 648/QĐ-BCT</p>
+                                                                <p>(đồng/kWh)</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>SẢN LƯỢNG </p>
+                                                                <p>(kWh)</p>
+                                                            </th>
+                                                            <th>
+                                                                <p>THÀNH TIỀN </p>
+                                                                <p>(đồng)</p>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="cals">
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 1</td>
+                                                            <td>1678</td>
+                                                            <td>50</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 2</td>
+                                                            <td>1734</td>
+                                                            <td>50</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 3</td>
+                                                            <td>2014</td>
+                                                            <td>100</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 4</td>
+                                                            <td>2536</td>
+                                                            <td>100</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 5</td>
+                                                            <td>2834</td>
+                                                            <td>100</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Bậc thang 6</td>
+                                                            <td>2927</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <div class="star">
+                                                Thành tiền:
+                                            </div>
+                                            <div>
+                                                <table class="table table-ca">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">Tiền điện chưa thuế</td>
+                                                            <td><input id="original" type="text" style="border: none; border-bottom: 1px solid black;" disabled ></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">Thuế GTGT (8%) tiền điện</td>
+                                                            <td><input id="thue" type="text" style="border: none; border-bottom: 1px solid black;"  disabled></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row" class="star">Tổng cộng tiền thanh toán (đồng)</td>
+                                                            <td><input id="finally" type="text" style="border: none; border-bottom: 1px solid black;" disabled></td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <pre>
+        Không áp dụng cho các trường hợp sau
+    
+        1. Khách hàng có thay đổi thiết bị đo đếm trong kỳ (Gắn mới, Thay thế, Tháo thu hồi)
+                                
+        2. Khách hàng có thay đổi giá bán điện áp dụng trong kỳ
+                                
+        3. Khách hàng có nhiều địa điểm dùng điện
+                                
+        4. Khách hàng lắp đo đếm phụ sau công tơ
+                                
+        5. Khách hàng sử dụng điện theo nhiều mục đích
+                                
+        6. Khách hàng có chốt chỉ số trong kỳ đổi giá điện
+                                        </pre>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!-- <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab"> profile </div>
+                        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab"> messages </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="container footer">
+            <p>2022</p>
+            <p>Nhóm 7 Đề tài 1</p>
+        </div>
+    </body>
+</html>
