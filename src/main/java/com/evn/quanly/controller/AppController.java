@@ -81,4 +81,9 @@ public class AppController {
     public String showCalculatorForm(Model model){
         return "calculator";
     }
+    
+    @GetMapping("/billing")
+    public String showBillingForm(Model model){
+        return "billing";
+    }
 }
