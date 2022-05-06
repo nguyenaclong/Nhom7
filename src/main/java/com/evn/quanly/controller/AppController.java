@@ -10,6 +10,9 @@ import com.evn.quanly.repository.UserRepository;
 import com.evn.quanly.service.CustomerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,10 +35,19 @@ public class AppController {
     public String viewHomePage() {
         return "index";
     }
-    
+
     @GetMapping("/index")
-    public String showHomePage(){
+    public String showHomePage() {
         return "index";
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        return "redirect:/index";
     }
 
     @GetMapping("/register")
@@ -76,14 +88,14 @@ public class AppController {
 
         return "customer_success";
     }
-    
+
     @GetMapping("/calculator")
-    public String showCalculatorForm(Model model){
+    public String showCalculatorForm(Model model) {
         return "calculator";
     }
-    
+
     @GetMapping("/billing")
-    public String showBillingForm(Model model){
+    public String showBillingForm(Model model) {
         return "billing";
     }
 }
